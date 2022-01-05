@@ -1,0 +1,208 @@
+﻿
+@{
+    ViewBag.Title = "CreateOrEdit";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    var item = ViewBag.item;
+
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h4>Create Product</h4>
+    </div>
+
+    <form action="/Product/SaveProduct" method="post">
+        <input type="hidden" id="ProductId" name="ProductId">
+        <div class="card-body">
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="ProductName">Product Name</label>
+                    <input type="text" class="form-control" id="Name" name="Name" value="@item.Name" placeholder="Product Name">
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label for="SKU">SKU</label>
+                    <input type="text" class="form-control" id="SKU" name="SKU" value="@item.SKU" placeholder="SKU">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Price">Price</label>
+                    <input type="number" class="form-control" id="Price" name="Price" step="0.00000001" value="@item.Price" placeholder="Price">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="EyeHeight">Eye Height</label>
+                    <input type="number" class="form-control" id="EyeHeight" value="@item.EyeHeight" step="0.00000001" name="EyeHeight" placeholder="Eye Height">
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="EyeWidth col-md-6">Eye Width</label>
+                    <input type="text" class="form-control" id="EyeWidth" step="0.00000001" value="@item.EyeWidth" name="EyeWidth"
+                           placeholder="Eye Width">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="NoseBridge ">Nose Bridge</label>
+                    <input type="text" class="form-control" id="NoseBridge" step="0.00000001" value="@item.NoseBridge" name="NoseBridge"
+                           placeholder="Nose Bridge">
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="TempleSize">Temple Size</label>
+                    <input type="number" class="form-control" id="TempleSize" step="0.00000001" value="@item.TempleSize" name="TempleSize"
+                           placeholder="Temple Size">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="FrameSize">Frame Size</label>
+                    <input type="number" class="form-control" id="FrameSize" step="0.00000001" value="@item.FrameSize" name="FrameSize"
+                           placeholder="Frame Size">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="FrameShape">Frame Shape</label>
+                    <input type="text" name="FrameShape" class="form-control" step="0.00000001" value="@item.FrameShape" id="FrameShape"
+                           placeholder="Frame Shape">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="ProductQuantity">Product Stock</label>
+                    <input type="number" name="ProductQuantity" class="form-control" step="0.00000001" value="@item.ProductQuantity" id="ProductQuantity"
+                           placeholder="Product Quantity">
+                </div>
+            </div>
+            <div class="form-row">
+                @*<div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                        </select>
+                    </div>*@
+                <div class="form-group col-md-3">
+                    <label for="Image1">Image 1</label>
+
+                    <input type="hidden" id="Thumbnail" name="Thumbnail" />
+                    <input class="form-control" id="imageUpload" name="Thumbnail" type="file" accept=".png, .jpg" />
+                </div>
+
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Material">Material</label>
+                    <input type="text" name="Material" class="form-control" value="@item.Material" id="Material"
+                           placeholder="Material ">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Feature on Main Page</label>
+
+
+                    <select name="IsFeatured" class="form-control">
+
+                        @if (item.IsFeatured == true)
+                        {
+
+                            <option id="IsFeatured" selected value="true">Yes</option>
+                            <option id="IsFeatured" value="false">No</option>
+                        }
+                        else if (item.IsFeatured == false)
+                        {
+                            <option id="IsFeatured" value="true">Yes</option>
+                            <option id="IsFeatured" selected value="false">No</option>
+                        }
+                        else
+                        {
+                            <option selected value="false" disabled>Select Options</option>
+
+                            <option id="IsFeatured" value="true">Yes</option>
+                            <option id="IsFeatured" value="false">No</option>
+
+                        }
+
+
+
+
+                    </select>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <input type="text" class="form-control" id="Description" name="Description" value="@item.Description" placeholder="Description" required="">
+                <div class="invalid-feedback">
+                    Description is needed
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="thumb">
+                    <img class="img-thumbnail img-fluid" id="productImage" src="~/Content/ProductImages/glass.jpg" />
+                </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<script>
+$("#imageUpload").change(function () {
+		var element = this;
+
+		var formData = new FormData();
+
+		var totalFiles = element.files.length;
+
+		for (var i = 0; i < totalFiles; i++) {
+			var file = element.files[i];
+			formData.append("Photo", file);
+		}
+
+		$.ajax({
+			type: 'POST',
+			url: '@Url.Action("UploadImage", "Shared")',
+            dataType: 'json',
+            data: formData,
+            contentType: false,
+            processData: false
+            })
+            .done(function (response) {
+          
+            console.log(response);
+
+            if (response.Success) {
+                $("#Thumbnail").val(response.ImageURL);
+                $("#productImage").attr("src", response.ImageURL);
+            }
+            })
+    .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+    alert("FAIL");
+         });
+    });
+</script>

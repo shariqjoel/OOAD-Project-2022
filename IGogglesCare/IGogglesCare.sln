@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGogglesCare.Repository", "IGogglesCare.Repository\IGogglesCare.Repository.csproj", "{E258624C-4DEA-4972-BE26-906FEDA91777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGogglesCare.Database", "IGogglesCare.Database\IGogglesCare.Database.csproj", "{3D69DC71-6076-4622-B149-46389F18956B}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "IGogglesCare.DbInstance", "IGogglesCare.DbInstance\IGogglesCare.DbInstance.sqlproj", "{96C0909F-71F9-48C3-A03D-0C02E1D6CE5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGogglesCare.Common", "IGogglesCare.Common\IGogglesCare.Common.csproj", "{DE584C76-491D-4415-8CB8-FA6896FD0D55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGogglesCare", "IGogglesCare\IGogglesCare.csproj", "{BAE097AC-49E8-42C8-8841-C759D0731C31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E258624C-4DEA-4972-BE26-906FEDA91777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E258624C-4DEA-4972-BE26-906FEDA91777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E258624C-4DEA-4972-BE26-906FEDA91777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E258624C-4DEA-4972-BE26-906FEDA91777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D69DC71-6076-4622-B149-46389F18956B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D69DC71-6076-4622-B149-46389F18956B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D69DC71-6076-4622-B149-46389F18956B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D69DC71-6076-4622-B149-46389F18956B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C0909F-71F9-48C3-A03D-0C02E1D6CE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C0909F-71F9-48C3-A03D-0C02E1D6CE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C0909F-71F9-48C3-A03D-0C02E1D6CE5A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{96C0909F-71F9-48C3-A03D-0C02E1D6CE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C0909F-71F9-48C3-A03D-0C02E1D6CE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C0909F-71F9-48C3-A03D-0C02E1D6CE5A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DE584C76-491D-4415-8CB8-FA6896FD0D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE584C76-491D-4415-8CB8-FA6896FD0D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE584C76-491D-4415-8CB8-FA6896FD0D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE584C76-491D-4415-8CB8-FA6896FD0D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAE097AC-49E8-42C8-8841-C759D0731C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE097AC-49E8-42C8-8841-C759D0731C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE097AC-49E8-42C8-8841-C759D0731C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE097AC-49E8-42C8-8841-C759D0731C31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BDA52B5-0E78-4267-9D15-FA25B4E62500}
+	EndGlobalSection
+EndGlobal

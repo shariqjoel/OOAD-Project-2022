@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D69DC71-6076-4622-B149-46389F18956B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IGogglesCare.Database</RootNamespace>
+    <AssemblyName>IGogglesCare.Database</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DTO\DTOCart.cs" />
+    <Compile Include="DTO\DTOCategory.cs" />
+    <Compile Include="DTO\DTOColor.cs" />
+    <Compile Include="DTO\DTOCT_OrderStatus.cs" />
+    <Compile Include="DTO\DTOImages.cs" />
+    <Compile Include="DTO\DTOLensesType.cs" />
+    <Compile Include="DTO\DTOLogin.cs" />
+    <Compile Include="DTO\DTOOrder.cs" />
+    <Compile Include="DTO\DTOOrderDetails.cs" />
+    <Compile Include="DTO\DTOProduct.cs" />
+    <Compile Include="DTO\DTOProductCategory.cs" />
+    <Compile Include="DTO\DTOProductImages.cs" />
+    <Compile Include="DTO\DTOProductLenses.cs" />
+    <Compile Include="DTO\DTOProduct_Color.cs" />
+    <Compile Include="DTO\DTORole.cs" />
+    <Compile Include="DTO\DTOUser.cs" />
+    <Compile Include="Model\Category.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Color.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_Option.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CT_OrderStatus.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Discount.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IGogglesCare.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IGogglesCare.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IGogglesCare.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IGogglesCare.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IGogglesCare.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Image.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LensesType.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Order.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderDetail.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductCategory.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductImage.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductLens.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductOption.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product_Color.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Role.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>IGogglesCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Model\IGogglesCare.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IGogglesCare.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\IGogglesCare.edmx.diagram">
+      <DependentUpon>IGogglesCare.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\IGogglesCare.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IGogglesCare.edmx</DependentUpon>
+      <LastGenOutput>IGogglesCare.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\IGogglesCare.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IGogglesCare.edmx</DependentUpon>
+      <LastGenOutput>IGogglesCare.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

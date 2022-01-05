@@ -1,0 +1,6 @@
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.DbInstance\bin\Debug\IGogglesCare.DbInstance.dacpac
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.DbInstance\bin\Debug\IGogglesCare.DbInstance.dll
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.DbInstance\bin\Debug\IGogglesCare.DbInstance.pdb
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.DbInstance\obj\Debug\IGogglesCare.DbInstance.dll
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.DbInstance\obj\Debug\IGogglesCare.DbInstance.pdb
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.DbInstance\obj\Debug\IGogglesCare.DbInstance.sqlproj.AssemblyReference.cache

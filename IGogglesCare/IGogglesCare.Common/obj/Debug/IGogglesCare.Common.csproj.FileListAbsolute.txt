@@ -1,0 +1,12 @@
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\bin\Debug\IGogglesCare.Common.dll
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\bin\Debug\IGogglesCare.Common.pdb
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\obj\Debug\IGogglesCare.Common.csproj.CoreCompileInputs.cache
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\obj\Debug\IGogglesCare.Common.dll
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\obj\Debug\IGogglesCare.Common.pdb
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\obj\Debug\IGogglesCare.Common.csproj.AssemblyReference.cache
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\bin\Debug\IGogglesCare.Database.dll
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\bin\Debug\EntityFramework.dll
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\bin\Debug\IGogglesCare.Database.pdb
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\bin\Debug\IGogglesCare.Database.dll.config
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\bin\Debug\EntityFramework.xml
+C:\Users\NTECH\source\repos\IGogglesCare\IGogglesCare.Common\obj\Debug\IGogglesCare.Common.csproj.CopyComplete

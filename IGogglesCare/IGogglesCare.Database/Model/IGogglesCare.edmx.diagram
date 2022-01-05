@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82780f7990c44bfa9cad3f9d0b3c52f1" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="IGogglesCareModel.Category" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IGogglesCareModel.Color" Width="1.5" PointX="3.75" PointY="4.375" />
+        <EntityTypeShape EntityType="IGogglesCareModel.CT_Option" Width="1.5" PointX="0.75" PointY="29.25" />
+        <EntityTypeShape EntityType="IGogglesCareModel.CT_OrderStatus" Width="1.5" PointX="1.5" PointY="16.75" />
+        <EntityTypeShape EntityType="IGogglesCareModel.Discount" Width="1.5" PointX="5.75" PointY="2.375" />
+        <EntityTypeShape EntityType="IGogglesCareModel.Image" Width="1.5" PointX="3.75" PointY="23.375" />
+        <EntityTypeShape EntityType="IGogglesCareModel.LensesType" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="IGogglesCareModel.Order" Width="1.5" PointX="3.75" PointY="17.75" />
+        <EntityTypeShape EntityType="IGogglesCareModel.OrderDetail" Width="1.5" PointX="6" PointY="10" />
+        <EntityTypeShape EntityType="IGogglesCareModel.Product" Width="1.5" PointX="0.75" PointY="8" />
+        <EntityTypeShape EntityType="IGogglesCareModel.Product_Color" Width="1.5" PointX="6" PointY="7.125" />
+        <EntityTypeShape EntityType="IGogglesCareModel.ProductCategory" Width="1.5" PointX="3" PointY="10.125" />
+        <EntityTypeShape EntityType="IGogglesCareModel.ProductImage" Width="1.5" PointX="6" PointY="13.125" />
+        <EntityTypeShape EntityType="IGogglesCareModel.ProductLens" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="IGogglesCareModel.ProductOption" Width="1.5" PointX="3" PointY="13.125" />
+        <EntityTypeShape EntityType="IGogglesCareModel.Role" Width="1.5" PointX="1.5" PointY="25" />
+        <EntityTypeShape EntityType="IGogglesCareModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2.375" />
+        <EntityTypeShape EntityType="IGogglesCareModel.User" Width="1.5" PointX="1.5" PointY="19" />
+        <AssociationConnector Association="IGogglesCareModel.FK_ProductCategory_Category" />
+        <AssociationConnector Association="IGogglesCareModel.FK_Product_Color_Color" />
+        <AssociationConnector Association="IGogglesCareModel.FK_ProductOptions_CT_Option" />
+        <AssociationConnector Association="IGogglesCareModel.FK_Order_CT_OrderStatus1" />
+        <AssociationConnector Association="IGogglesCareModel.FK_ProductImages_Images" />
+        <AssociationConnector Association="IGogglesCareModel.FK_ProductLenses_LensesType" />
+        <AssociationConnector Association="IGogglesCareModel.FK_Order_Users" />
+        <AssociationConnector Association="IGogglesCareModel.FK_OrderDetails_Order" />
+        <AssociationConnector Association="IGogglesCareModel.FK_OrderDetails_Product" />
+        <AssociationConnector Association="IGogglesCareModel.FK_Product_Color_Product" />
+        <AssociationConnector Association="IGogglesCareModel.FK_ProductCategory_Product" />
+        <AssociationConnector Association="IGogglesCareModel.FK_ProductImages_Product" />
+        <AssociationConnector Association="IGogglesCareModel.FK_ProductLenses_Product" />
+        <AssociationConnector Association="IGogglesCareModel.FK_ProductOptions_Product" />
+        <AssociationConnector Association="IGogglesCareModel.FK_Users_Role" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

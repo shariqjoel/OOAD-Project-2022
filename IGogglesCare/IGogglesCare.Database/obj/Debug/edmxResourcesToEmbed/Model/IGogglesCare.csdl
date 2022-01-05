@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IGogglesCareModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="IGogglesCareEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="IGogglesCareModel.Category" />
+    <EntitySet Name="Colors" EntityType="IGogglesCareModel.Color" />
+    <EntitySet Name="CT_Option" EntityType="IGogglesCareModel.CT_Option" />
+    <EntitySet Name="CT_OrderStatus" EntityType="IGogglesCareModel.CT_OrderStatus" />
+    <EntitySet Name="Discounts" EntityType="IGogglesCareModel.Discount" />
+    <EntitySet Name="Images" EntityType="IGogglesCareModel.Image" />
+    <EntitySet Name="LensesTypes" EntityType="IGogglesCareModel.LensesType" />
+    <EntitySet Name="Orders" EntityType="IGogglesCareModel.Order" />
+    <EntitySet Name="OrderDetails" EntityType="IGogglesCareModel.OrderDetail" />
+    <EntitySet Name="Products" EntityType="IGogglesCareModel.Product" />
+    <EntitySet Name="Product_Color" EntityType="IGogglesCareModel.Product_Color" />
+    <EntitySet Name="ProductCategories" EntityType="IGogglesCareModel.ProductCategory" />
+    <EntitySet Name="ProductImages" EntityType="IGogglesCareModel.ProductImage" />
+    <EntitySet Name="ProductLenses" EntityType="IGogglesCareModel.ProductLens" />
+    <EntitySet Name="ProductOptions" EntityType="IGogglesCareModel.ProductOption" />
+    <EntitySet Name="Roles" EntityType="IGogglesCareModel.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="IGogglesCareModel.sysdiagram" />
+    <EntitySet Name="Users" EntityType="IGogglesCareModel.User" />
+    <AssociationSet Name="FK_ProductCategory_Category" Association="IGogglesCareModel.FK_ProductCategory_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Color_Color" Association="IGogglesCareModel.FK_Product_Color_Color">
+      <End Role="Color" EntitySet="Colors" />
+      <End Role="Product_Color" EntitySet="Product_Color" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductOptions_CT_Option" Association="IGogglesCareModel.FK_ProductOptions_CT_Option">
+      <End Role="CT_Option" EntitySet="CT_Option" />
+      <End Role="ProductOption" EntitySet="ProductOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_CT_OrderStatus1" Association="IGogglesCareModel.FK_Order_CT_OrderStatus1">
+      <End Role="CT_OrderStatus" EntitySet="CT_OrderStatus" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImages_Images" Association="IGogglesCareModel.FK_ProductImages_Images">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="ProductImage" EntitySet="ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductLenses_LensesType" Association="IGogglesCareModel.FK_ProductLenses_LensesType">
+      <End Role="LensesType" EntitySet="LensesTypes" />
+      <End Role="ProductLens" EntitySet="ProductLenses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Users" Association="IGogglesCareModel.FK_Order_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Order" Association="IGogglesCareModel.FK_OrderDetails_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Product" Association="IGogglesCareModel.FK_OrderDetails_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Color_Product" Association="IGogglesCareModel.FK_Product_Color_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Product_Color" EntitySet="Product_Color" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_Product" Association="IGogglesCareModel.FK_ProductCategory_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImages_Product" Association="IGogglesCareModel.FK_ProductImages_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductImage" EntitySet="ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductLenses_Product" Association="IGogglesCareModel.FK_ProductLenses_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductLens" EntitySet="ProductLenses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductOptions_Product" Association="IGogglesCareModel.FK_ProductOptions_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductOption" EntitySet="ProductOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Role" Association="IGogglesCareModel.FK_Users_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="ProductCategories" Relationship="IGogglesCareModel.FK_ProductCategory_Category" FromRole="Category" ToRole="ProductCategory" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="ColorId" />
+    </Key>
+    <Property Name="ColorId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product_Color" Relationship="IGogglesCareModel.FK_Product_Color_Color" FromRole="Color" ToRole="Product_Color" />
+  </EntityType>
+  <EntityType Name="CT_Option">
+    <Key>
+      <PropertyRef Name="CT_OptionId" />
+    </Key>
+    <Property Name="CT_OptionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProductOptions" Relationship="IGogglesCareModel.FK_ProductOptions_CT_Option" FromRole="CT_Option" ToRole="ProductOption" />
+  </EntityType>
+  <EntityType Name="CT_OrderStatus">
+    <Key>
+      <PropertyRef Name="CT_OrderStatusId" />
+    </Key>
+    <Property Name="CT_OrderStatusId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Orders" Relationship="IGogglesCareModel.FK_Order_CT_OrderStatus1" FromRole="CT_OrderStatus" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Discount">
+    <Key>
+      <PropertyRef Name="DiscountId" />
+    </Key>
+    <Property Name="DiscountId" Type="Int64" Nullable="false" />
+    <Property Name="DiscountPercent" Type="Int64" />
+    <Property Name="Expiry" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="UpdatedBy" Type="Int64" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProductImages" Relationship="IGogglesCareModel.FK_ProductImages_Images" FromRole="Image" ToRole="ProductImage" />
+  </EntityType>
+  <EntityType Name="LensesType">
+    <Key>
+      <PropertyRef Name="LensesTypeId" />
+    </Key>
+    <Property Name="LensesTypeId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProductLenses" Relationship="IGogglesCareModel.FK_ProductLenses_LensesType" FromRole="LensesType" ToRole="ProductLens" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int64" Nullable="false" />
+    <Property Name="CustomerId" Type="Int64" />
+    <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="OrderStatusId" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <NavigationProperty Name="CT_OrderStatus" Relationship="IGogglesCareModel.FK_Order_CT_OrderStatus1" FromRole="Order" ToRole="CT_OrderStatus" />
+    <NavigationProperty Name="User" Relationship="IGogglesCareModel.FK_Order_Users" FromRole="Order" ToRole="User" />
+    <NavigationProperty Name="OrderDetails" Relationship="IGogglesCareModel.FK_OrderDetails_Order" FromRole="Order" ToRole="OrderDetail" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailsId" />
+    </Key>
+    <Property Name="OrderDetailsId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int64" />
+    <Property Name="ProductId" Type="Int64" />
+    <Property Name="Quantity" Type="Int64" />
+    <NavigationProperty Name="Order" Relationship="IGogglesCareModel.FK_OrderDetails_Order" FromRole="OrderDetail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="IGogglesCareModel.FK_OrderDetails_Product" FromRole="OrderDetail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Material" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SKU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="EyeHeight" Type="Double" />
+    <Property Name="EyeWidth" Type="Double" />
+    <Property Name="NoseBridge" Type="Double" />
+    <Property Name="TempleSize" Type="Double" />
+    <Property Name="FrameSize" Type="Double" />
+    <Property Name="FrameShape" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsFeatured" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="ProductQuantity" Type="Int64" />
+    <Property Name="IsAvailable" Type="Boolean" />
+    <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OrderDetails" Relationship="IGogglesCareModel.FK_OrderDetails_Product" FromRole="Product" ToRole="OrderDetail" />
+    <NavigationProperty Name="Product_Color" Relationship="IGogglesCareModel.FK_Product_Color_Product" FromRole="Product" ToRole="Product_Color" />
+    <NavigationProperty Name="ProductCategories" Relationship="IGogglesCareModel.FK_ProductCategory_Product" FromRole="Product" ToRole="ProductCategory" />
+    <NavigationProperty Name="ProductImages" Relationship="IGogglesCareModel.FK_ProductImages_Product" FromRole="Product" ToRole="ProductImage" />
+    <NavigationProperty Name="ProductLenses" Relationship="IGogglesCareModel.FK_ProductLenses_Product" FromRole="Product" ToRole="ProductLens" />
+    <NavigationProperty Name="ProductOptions" Relationship="IGogglesCareModel.FK_ProductOptions_Product" FromRole="Product" ToRole="ProductOption" />
+  </EntityType>
+  <EntityType Name="Product_Color">
+    <Key>
+      <PropertyRef Name="Product_ColorId" />
+    </Key>
+    <Property Name="Product_ColorId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ColorId" Type="Int64" />
+    <Property Name="ProductId" Type="Int64" />
+    <NavigationProperty Name="Color" Relationship="IGogglesCareModel.FK_Product_Color_Color" FromRole="Product_Color" ToRole="Color" />
+    <NavigationProperty Name="Product" Relationship="IGogglesCareModel.FK_Product_Color_Product" FromRole="Product_Color" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryId" />
+    </Key>
+    <Property Name="ProductCategoryId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int64" />
+    <Property Name="CategoryId" Type="Int64" />
+    <NavigationProperty Name="Category" Relationship="IGogglesCareModel.FK_ProductCategory_Category" FromRole="ProductCategory" ToRole="Category" />
+    <NavigationProperty Name="Product" Relationship="IGogglesCareModel.FK_ProductCategory_Product" FromRole="ProductCategory" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="ProductImagesId" />
+    </Key>
+    <Property Name="ProductImagesId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int64" />
+    <Property Name="ImageId" Type="Int64" />
+    <NavigationProperty Name="Image" Relationship="IGogglesCareModel.FK_ProductImages_Images" FromRole="ProductImage" ToRole="Image" />
+    <NavigationProperty Name="Product" Relationship="IGogglesCareModel.FK_ProductImages_Product" FromRole="ProductImage" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductLens">
+    <Key>
+      <PropertyRef Name="ProductLensesId" />
+    </Key>
+    <Property Name="ProductLensesId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int64" />
+    <Property Name="LensesId" Type="Int64" />
+    <NavigationProperty Name="LensesType" Relationship="IGogglesCareModel.FK_ProductLenses_LensesType" FromRole="ProductLens" ToRole="LensesType" />
+    <NavigationProperty Name="Product" Relationship="IGogglesCareModel.FK_ProductLenses_Product" FromRole="ProductLens" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductOption">
+    <Key>
+      <PropertyRef Name="ProductOptionsId" />
+    </Key>
+    <Property Name="ProductOptionsId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CT_OptionId" Type="Int64" />
+    <Property Name="ProductId" Type="Int64" />
+    <NavigationProperty Name="CT_Option" Relationship="IGogglesCareModel.FK_ProductOptions_CT_Option" FromRole="ProductOption" ToRole="CT_Option" />
+    <NavigationProperty Name="Product" Relationship="IGogglesCareModel.FK_ProductOptions_Product" FromRole="ProductOption" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="Users" Relationship="IGogglesCareModel.FK_Users_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BillingAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="RoleId" Type="Int64" />
+    <NavigationProperty Name="Orders" Relationship="IGogglesCareModel.FK_Order_Users" FromRole="User" ToRole="Order" />
+    <NavigationProperty Name="Role" Relationship="IGogglesCareModel.FK_Users_Role" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK_ProductCategory_Category">
+    <End Type="IGogglesCareModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.ProductCategory" Role="ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Color_Color">
+    <End Type="IGogglesCareModel.Color" Role="Color" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.Product_Color" Role="Product_Color" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="ColorId" />
+      </Principal>
+      <Dependent Role="Product_Color">
+        <PropertyRef Name="ColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductOptions_CT_Option">
+    <End Type="IGogglesCareModel.CT_Option" Role="CT_Option" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.ProductOption" Role="ProductOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CT_Option">
+        <PropertyRef Name="CT_OptionId" />
+      </Principal>
+      <Dependent Role="ProductOption">
+        <PropertyRef Name="CT_OptionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_CT_OrderStatus1">
+    <End Type="IGogglesCareModel.CT_OrderStatus" Role="CT_OrderStatus" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CT_OrderStatus">
+        <PropertyRef Name="CT_OrderStatusId" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="OrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImages_Images">
+    <End Type="IGogglesCareModel.Image" Role="Image" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductLenses_LensesType">
+    <End Type="IGogglesCareModel.LensesType" Role="LensesType" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.ProductLens" Role="ProductLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LensesType">
+        <PropertyRef Name="LensesTypeId" />
+      </Principal>
+      <Dependent Role="ProductLens">
+        <PropertyRef Name="LensesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Users">
+    <End Type="IGogglesCareModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Order">
+    <End Type="IGogglesCareModel.Order" Role="Order" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Product">
+    <End Type="IGogglesCareModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Color_Product">
+    <End Type="IGogglesCareModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.Product_Color" Role="Product_Color" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Product_Color">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_Product">
+    <End Type="IGogglesCareModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.ProductCategory" Role="ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImages_Product">
+    <End Type="IGogglesCareModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductLenses_Product">
+    <End Type="IGogglesCareModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.ProductLens" Role="ProductLens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductLens">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductOptions_Product">
+    <End Type="IGogglesCareModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.ProductOption" Role="ProductOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductOption">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Role">
+    <End Type="IGogglesCareModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="IGogglesCareModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
